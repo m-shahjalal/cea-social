@@ -21,7 +21,6 @@ const Single = () => {
 	const dispatch = useDispatch();
 	const state = useSelector((state) => state.post);
 	const item = state.post.find((item) => item.id === parseInt(id));
-	console.log(item);
 	const [loading, setLoading] = useState(false);
 	const history = useHistory();
 
@@ -30,7 +29,6 @@ const Single = () => {
 		dispatch(actions.deletePost(item.id));
 		api.deletePost(item.id)
 			.then((response) => {
-				console.log(response.data);
 				setLoading(false);
 				toast.success('Delete post successfully');
 				history.push('/');

@@ -12,7 +12,6 @@ actions.fetchPost = (post) => {
 		dispatch({ type: GET_POST });
 		try {
 			const res = await api.getPost();
-			console.log(res);
 			dispatch({ type: SUCCESS, payload: res.data });
 		} catch (error) {
 			console.log(error);
